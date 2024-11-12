@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('team_name');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // Ketua tim
-            $table->string('contact');
+            $table->integer('total_member');
+            $table->string('description');
+            $table->string('status_pendaftaran');
             $table->timestamps();
+            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
