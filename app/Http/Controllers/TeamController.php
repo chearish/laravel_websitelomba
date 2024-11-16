@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -9,6 +10,13 @@ class TeamController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    
+    public function showHomeRegistration()
+    {
+        $teams = Team::all(); // Retrieve all teams
+        return view('admin/homeregistration', compact('teams'));
+    }
     public function index()
     {
         //

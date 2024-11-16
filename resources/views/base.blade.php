@@ -1,59 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Petra Cantare! International Choral Festival</title>
-</head>
-<body>
-      
-    <header class="container-fluid p-3 bg-light">
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <a href="/">
-                    <img src="logo.png" alt="Petra Cantare Logo">
-                </a>
+<html>
+    <head>
+        <!-- Basic -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Site Metas -->
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>Petra Cantare</title>
+
+        @yield('library-css')
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        @vite(['resources/css/style.css', 'resources/css/responsive.css', 'resources/css/bootstrap.css'])
+    </head>
+
+    <div class="hero_area">
+        <!-- Header Section -->
+        <header class="header_section bg-light shadow">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">
+                <span>Petra Cantare</span>
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left-aligned navigation links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="service.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                </ul>
+
+                <!-- Right-aligned buttons -->
+                <div class="d-flex">
+                <a class="btn btn-outline-primary me-2" href="login.html">Login</a>
+                <a class="btn btn-primary" href="signup.html">Signup</a>
+                </div>
             </div>
-            <div class="col-md-10 text-center">
-                <h2>Petra Cantare! International Choral Festival</h2>
-            </div>
-            <div class="col-md-3 text-right">
-                <a href="/login" class="btn btn-outline-primary mr-2">Login</a>
-                <a href="/signup" class="btn btn-primary">Sign Up</a>
-            </div>
+            </nav>
+    
         </div>
     </header>
-
-    <nav class="container-fluid bg-secondary text-light">
-        <div class="row justify-content-center">
-            <a href="/" class="btn btn-link text-light">Home</a>
-            <a href="/faq" class="btn btn-link text-light">FAQ</a>
-            <a href="/contact" class="btn btn-link text-light">Contact Us</a>
-        </div>
-    </nav>
-
-    <section class="container py-5">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="image.jpg" alt="Festival Image" class="img-fluid">
-            </div>
-            <div class="col-md-6">
-                <h3>About the Festival</h3>
-                <p>
-                    Lomba Paduan Suara Petra Cantare merupakan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non eros auctor, vulputate sapien a, efficitur leo. Vivamus ullamcorper vestibulum consequat.
-                </p>
-                <p>
-                    <strong>Date:</strong> 23 — 27 July 2025 <br>
-                    <strong>Venue:</strong> Yong Siew Toh Conservatory of Music Concert Hall, The Esplanade Concert Hall
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-</body>
+    @yield('content')
+    </div>
+    @yield('library-js')
+  </body>
 </html>
