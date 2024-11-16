@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::get('/homeregistration', [TeamController::class, 'showHomeRegistration']);
