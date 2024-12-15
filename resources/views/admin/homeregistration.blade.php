@@ -1,28 +1,22 @@
 @extends('base')
 
-@section('title', 'Registered Teams')
+
 
 @section('library-css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
 @endsection
 
 @section('content') 
-<div class="container mx-auto mt-20 p-8">
+<div class="container mx-auto mt-10 p-8">
     <div class="flex items-center space-x-4 mb-6">
-        <h1 class="text-3xl font-bold">Petra Cantare! International Choral Festival</h1>
+        <h1 class="text-3xl font-bold">REGISTERED TEAM</h1>
     </div>
-
-    <div class="my-4">
-        <button class="border border-gray-400 px-4 py-2 rounded hover:bg-gray-200">
-            Filter by: None
-        </button>
-    </div>
-
     
-    <p class="font-semibold text-lg mb-4">Total Registered Team:</p>
-    <div class="bg-white shadow-md rounded-lg mt-20">
+    <p class="font-semibold text-lg mb-4">Total Registered Team: </p>
+    <div class="bg-white shadow-md rounded-lg p-8">
         <table class="min-w-full text-sm text-left border border-gray-200" id="events-table">
             <thead class="bg-gray-200 text-gray-700 uppercase font-medium">
                 <tr>
@@ -75,3 +69,5 @@
     });
 </script>
 @endsection
+
+
