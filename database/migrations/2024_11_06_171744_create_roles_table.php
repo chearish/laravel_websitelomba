@@ -19,7 +19,7 @@ return new class extends Migration
         });
 
         Schema::table('users', function($table) {
-            $table->bigInteger('role_id')->unsigned();
+            $table->bigInteger('role_id')->unsigned()->default(2);
             $table->foreign('role_id')
                   ->references('id')
                   ->on('roles')->onDelete('cascade');

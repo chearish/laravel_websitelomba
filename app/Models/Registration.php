@@ -9,7 +9,7 @@ class Registration extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'registration_id';
+    protected $table = 'registration';
 
     protected $fillable = [
         'registration_date',
@@ -22,7 +22,7 @@ class Registration extends Model
     // Relationship: Registration belongs to a Team
     public function team()
     {
-        return $this->belongsTo(Team::class, 'team_id');
+        return $this->belongsTo(Team::class, 'team_id', 'id');
     }
 
     // Relationship: Registration belongs to a Category

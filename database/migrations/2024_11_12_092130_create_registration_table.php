@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('registration', function (Blueprint $table) {
-            $table->id('registration_id');
+            $table->id();
             $table->bigInteger('team_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
             $table->date('registration_date');
-            $table->string('registration_status');
+            $table->string('registration_status')->default('Pending');
             $table->string('payment_proof');
             $table->timestamps();
         

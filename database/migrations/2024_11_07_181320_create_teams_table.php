@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('team_name');
             $table->integer('total_member');
             $table->string('description');
-            $table->boolean('status_pendaftaran');
+            $table->string('status_pendaftaran')->default('pending');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

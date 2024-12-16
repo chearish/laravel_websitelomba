@@ -9,7 +9,7 @@ class Team extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'team_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'team_name',
@@ -31,8 +31,15 @@ class Team extends Model
     }
 
     // Relationship: Team can have multiple Registrations
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'registration', 'team_id', 'category_id')
+        ->withPivot('payment_proof', 'registration_status')
+        ->withTimestamps();
+    }
+
     public function registrations()
     {
-        return $this->hasMany(Registration::class, 'team_id');
+        return $this->hasMany(Registration::class); // Assuming you have a Registration model
     }
 }

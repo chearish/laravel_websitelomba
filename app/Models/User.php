@@ -48,9 +48,14 @@ class User extends Authenticatable
     //     ];
     // }
 
-    public function teams()
+    public function role()
     {
-        return $this->hasMany(Team::class, 'user_id');
+        return $this->belongsTo(Role::class);
     }
 
+    public function teams()
+    {
+        return $this->hasMany(Team::class);
+    }
+    
 }

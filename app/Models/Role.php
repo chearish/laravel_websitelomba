@@ -7,15 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name'];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-    ];
-
+    // Define the relationship with users
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
